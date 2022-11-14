@@ -18,7 +18,7 @@ if err == 0
   else
 	disp('Щось пішло не так')
 end
-
+fzero(f,x0)
 
 
 
