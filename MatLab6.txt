@@ -1,0 +1,19 @@
+1. 
+a) function [R1 R2 ... Rn] = ff()
+b) function = ff(x1,x2,…,xn) 
+с) function [... X ...] = ff(... X ...)
+d) function [Y] = ff(X)
+2.
+a) help myfun
+b) type myfun
+c) lookfor myfun
+3. 
+a) function [sum] = myfun(x, y)
+   sum = x + y
+   end
+b) myfun = @(x, y) (x + y)
+c) myfun = inline('x + y', 'x', 'y')
+4. Підфункція має бути описана після основної функції, а вкладена функція - в будь-якому місці основної функції; виклик підфункцій, крім основної функції, також доступний у інших підфункціях.
+5.
+a) f(..., @myfun, ...), f(..., 'myfun', ...)
+b) feval(@myfun, ...), feval('myfun’, ...)

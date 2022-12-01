@@ -1,0 +1,53 @@
+1. ',' використовується для розділення команд в рядку, ';' використовується для блокування виводу, '...' використовується для переносу частини рядка.
+2. a = b - синтаксис присвоєння; значення виразу b стає значенням змінної a.
+3. if a > 0
+	disp(a)
+   else
+	a = a^2;
+   end
+4. if a > 0
+	b = sqrt(a);
+   end
+5. if abs(x) >= 2
+	y = 0;
+   elseif abs(x) <= 1
+	y = -x;
+   else
+	y = 2 - abs(x);
+   end
+6. switch G
+	case 1
+	    disp('Aries')
+	case 2
+	    disp('Taurus')
+	case 3
+	    disp('Gemini')
+	case 4
+	    disp('Cancer')
+	case 5
+	    disp('Leo')
+	case 6
+	    disp('Virgo')
+	case 7
+	    disp('Libra')
+	case 8
+	    disp('Scorpio')
+	case 9
+	    disp('Sagittarius')
+	case 10
+	    disp('Capricorn')
+	case 11
+	    disp('Aquarius')
+	case 12
+	    disp('Pisces')
+    end
+7. while A
+	B
+   end
+- цикл з передумовою; B виконується, поки A істинне.
+8. for i = a1:a2:a3
+	B
+   end
+- цикл за діапазоном значень; a1 - початкове значення i, після кожної ітерації i змінюється на a2, B виконується, поки i не вийде за діапазон a1-a3.
+9. A = input('A = ')
+10. A, disp(A), display(A)
