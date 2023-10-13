@@ -19,6 +19,7 @@ alf = 2.5; bet = 1;
 plot(Y(:,1), Y(:,2), 'r','LineWidth',2), grid on
 title('Фазові траєкторії')
 xlabel('u'), ylabel('v')
+
 ch=legend('{\alpha}=1, {\beta}=2.5',...
     '{\alpha}=2.5,{\beta}=1','Location','Best')
 set(ch,'Fontsize',12)
@@ -27,3 +28,6 @@ function F = f91(t, U)
 % підфункція правої частини системи
 global alf bet
 F = [U(1).*(1 - alf .*U(2)); U(2).*(bet.*U(1) - 1)];
+
+
+
