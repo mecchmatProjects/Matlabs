@@ -1,0 +1,85 @@
+Â³äïîâ³ä³ íà ëåêö³þ ¹11
+
+ 1)
+function p_1
+clc, clear; 
+z = sym('ff(x)') 
+syms x h;
+rdz=(subs(z,x,x-h,x+h)-2*z)/h.2 
+nh=0.05;nx=1;
+ff=@(t)(cos(t));
+s=subs(subs(rdz,h,'nh'),x,'nx') 
+es=vpa(s) 
+en=eval(s) 
+
+2)
+clc, clear
+
+syms x y
+P(y), Q(x)
+s = subs(P,Y,Q*(x-5));
+k = diff(s);
+V = collect(s,var);
+G = horner(s);
+
+
+3)
+%% pl13_5.m
+clc , clear 
+
+syms x h;
+zmh = sym('u(x+h)');
+z0h = sym('u(x)');
+sm = taylor(zmh, 7, x, h);
+Oh = simplify((sm-z0h)/h-diff(z0h,x,2));
+Oh = subs(Oh, x, 'Xi'); Oh = collect(Oh);
+z = char(Oh); k = findstr(z,'h'); 
+z = z(k(end-1)+3:end);
+Oh = simple(sym(z))
+4)
+clc, clear
+
+syms x
+A = [1 -1 1;…
+        1 1 -1;…
+        2 -1 0];
+H = [-x, 0, 0;…
+ 	0, -x, 0;…
+       0, 0, -x];
+K=A.*H;
+W=det(A)
+
+5)
+%% pl13_9.m
+clear all, close all, clc
+ezplot('41*x^2+3*y^2-123’,[-2,2]), hold on
+ezplot('6*x^2+31*y^2-186',[-2,2]), grid on
+S = solve('41*x^2+3*y^2-123=0',...
+'6*x^2+31*y^2-186=0', 'x', 'y');
+s = strcat(s1,' á)\n',s2);
+fprintf(s);
+n = length(S.x);
+for k = 1 : n
+fprintf('%17.8f |%17.8f\n', double(S.x(k)), double(S.y(k)));
+end
+pause, clear all, close all
+
+6)-8)
+function my_1
+syms x
+z = dsolve('x(t)','D2y+y=4*sin(x)');
+u = subs(subs(z,C1,1),C2,1);
+h = subs(subs(z,C1,0),C2,0);
+ezplot(u,[-5,5,-5,5]); hold on;
+ezplot(h,[-5,5,-5,5]); grid on; pause;
+ParametricPlot[Evaluate[xyc[1, 1]], {t, 0, 10}, PlotRange -> All]
+ParametricPlot[Evaluate[Table[xyc[1, 0], {0, 1, 10}]], {t, 0, 10}, 
+ PlotRange -> All]
+ParametricPlot[Evaluate[Table[xyc[0, 1], {0, 1, 10}]], {t, 0, 10}, 
+ PlotRange -> All]
+
+
+
+
+
+

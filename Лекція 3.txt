@@ -1,0 +1,37 @@
+Lecture 3
+1.1 was done in a homework
+1.2
+clc, clear
+n = input('Розмірність СЛАР = ');
+A = zeros(n,n);
+for j = 1:n-1
+   for p = (j+1):n
+    A(j,p) = randi([0 10], 1, 1)+ randi([-10 10], 1, 1) * 1i;
+    A(j,p) = A(p,j)';
+  end
+end
+disp(A);
+L = zeros(n,n); D = zeros(n,n);
+D(1,1) = A(1,1);
+for j = 1:n
+    L(j,j)=1;
+    if j>1
+        L(j,1)=A(j,1)/A(1,1);
+    end
+end
+for j=2:n
+    S1 = 0;
+    for p = 1:(j-1)
+        S1 = S1 +(abs(L(j,p)))^2*D(p,p);
+    end
+    D(j,j)=A(j,j) - S1;
+    for s = (j+1):n
+        S2 = 0;
+        for p=1:(j-1)
+            S2 = S2 +   L(s,p) * D(p,p) * L(j,p)';
+        end
+        L(s,j)=(A(s,j)-S2)/D(j,j);
+    end
+end
+disp(L);
+disp(D);
